@@ -1,7 +1,7 @@
 # ivanbalasi.com
 
 Plain HTML, CSS and JavaScript. No framework, no build step, no database.
-Last updated: October 27, 2026.
+Last updated: October 28, 2026.
 
 ## Upload
 - Upload everything in this folder to the web root (`public_html` on HostGator), so
@@ -58,6 +58,16 @@ Opening the files with file:// works, but browsers block the web fonts that way.
 - Keith Micoli's title: associate dean.
 - New job title across the site.
 
+## Changes on October 28
+- Photography: new photos 01 (Travel, Venice), 02 (Event, wedding photo booth) and
+  05 (Lifestyle, East River). No headshot or lab photos in the grid now.
+- Video & podcast: both podcast covers are now a blue "Podcast" tile with a mic icon
+  (`.podcast-tile` in css/styles.css). New wording on recording, publishing and distribution.
+  `img/media/grad-insider-cover.jpg` deleted.
+- Home: Video card says "I shoot and edit."
+
 ## Still open
-- 9 Behance design images, 5 Vimeo posters and the podcast cover still load from the live URLs.
+- 9 Behance design images and 5 Vimeo posters still load from the live URLs.
+- Clinical Research podcast label still reads "Podcast · Libsyn · Ongoing".
+- Photos 01, 02 and 05 are about 900px wide. Swap in bigger exports if you have them.
 - After launch: submit https://ivanbalasi.com/sitemap.xml in Google Search Console and Bing.
