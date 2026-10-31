@@ -23,4 +23,4 @@
 @media(prefers-reduced-motion:reduce){.sheet .frame img{transition:none}html{scroll-behavior:auto}}
 
 .hero-image img{object-position:center 20%}
-.about-image img{object-position:57% center}
+.about-image img{object-position:center 30%}
