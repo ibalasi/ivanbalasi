@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap");
+
+
+/* ==========================================================================
+   Bumble look — light Classic layout in the Bumble palette.
+   Honey #FFDB5B, Pollen #FFF386, Charcoal #1D1D1B, Cream #FFFDF5. Inter type,
+   soft rounded cards, no borders or hard shadows. Light only, any theme.
+   ========================================================================== */
+:root[data-look="bumble"] {
+  --paper: #fffdf5; --paper-2: #ffffff; --ink: #1d1d1b; --ink-2: #4a4a45;
+  --line: rgba(29, 29, 27, .14); --line-2: rgba(29, 29, 27, .28);
+  --accent: #1d1d1b; --accent-ink: #ffffff; --focus: #1d1d1b; --success: #2a9d4b; --accent-inverse: #ffdb5b;
+  --card: #ffffff; --stage: #fff386; --dim: #1d1d1b; --glow: 0;
+  --honey: #ffdb5b; --pollen: #fff386;
+  --shadow: 0 12px 40px rgba(29, 29, 27, .10); --shadow-hover: 0 18px 48px rgba(29, 29, 27, .16);
+  --ca: #ffdb5b; --cb: #ffdb5b;
+  --f-display: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-serif: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --t-hero: clamp(2.6rem, 1rem + 6.4vw, 6.6rem);
+  --r-card: 22px;
+  color-scheme: light;
+}
+:root[data-look="bumble"] body { background: var(--paper); background-image: none; font-size: 1.0625rem; }
+:root[data-look="bumble"] body::before { background: #fff; }
+:root[data-look="bumble"] h1, :root[data-look="bumble"] h2, :root[data-look="bumble"] h3, :root[data-look="bumble"] h4 { font-family: var(--f-display); font-weight: 800; letter-spacing: -.03em; }
+:root[data-look="bumble"] .label { font-weight: 700; color: inherit; opacity: .8; }
+:root[data-look="bumble"] .theme-toggle { display: none; }
+:root[data-look="bumble"] ::selection { background: var(--honey); color: var(--ink); }
+:root[data-look="bumble"] :focus-visible { outline: 3px solid var(--ink); }
+:root[data-look="bumble"] a:hover { color: inherit; }
+:root[data-look="bumble"] .lede { color: var(--ink); font-weight: 400; }
+
+/* Header: plain white bar */
+:root[data-look="bumble"] .site-header { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom: 1px solid var(--line); }
+:root[data-look="bumble"] .brand { font-weight: 800; letter-spacing: .14em; word-spacing: .2em; -webkit-text-stroke: 0; font-size: 1rem; }
+:root[data-look="bumble"] .brand span { font-weight: 500; letter-spacing: 0; word-spacing: 0; color: var(--ink-2); }
+:root[data-look="bumble"] .nav-list a { font-weight: 700; color: var(--ink); }
+:root[data-look="bumble"] .nav-list a:hover { background: var(--pollen); color: var(--ink); }
+:root[data-look="bumble"] .nav-list a[aria-current="page"] { background: var(--honey); color: var(--ink); }
+:root[data-look="bumble"] .icon-btn { border-color: var(--line-2); }
+:root[data-look="bumble"] .icon-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+:root[data-look="bumble"] .look-switch { box-shadow: inset 0 0 0 1px var(--line-2); background: transparent; }
+:root[data-look="bumble"] .look-switch button { color: var(--ink-2); font-weight: 700; }
+:root[data-look="bumble"] .look-switch button:hover { color: var(--ink); }
+:root[data-look="bumble"] .look-switch button[aria-pressed="true"] { background: var(--honey); color: var(--ink); }
+@media (max-width: 60rem) {
+  :root[data-look="bumble"] .site-nav { background: #fff; }
+  :root[data-look="bumble"] .nav-list a { font-weight: 800; letter-spacing: -.03em; }
+  :root[data-look="bumble"] .nav-list a:hover, :root[data-look="bumble"] .nav-list a[aria-current="page"] { background: transparent; color: var(--ink); text-decoration: underline; text-decoration-color: var(--honey); text-decoration-thickness: 5px; text-underline-offset: 6px; }
+}
+
+/* Buttons & links */
+:root[data-look="bumble"] .btn { background: var(--ink); color: #fff; border: 0; font: 800 1rem/1 var(--f-display); min-height: 3.2rem; padding-inline: 1.7rem; transition: transform .2s, background-color .2s, color .2s; }
+:root[data-look="bumble"] .btn:hover { background: var(--honey); color: var(--ink); box-shadow: inset 0 0 0 3px var(--ink); transform: scale(1.04); }
+:root[data-look="bumble"] .btn--ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 3px var(--ink); }
+:root[data-look="bumble"] .btn--ghost:hover { background: var(--ink); color: #fff; }
+:root[data-look="bumble"] .link-arrow { font-weight: 800; border-bottom: 3px solid var(--honey); }
+:root[data-look="bumble"] .link-arrow:hover { color: inherit; border-bottom-color: var(--ink); }
+
+/* Home hero: white, honey title block */
+:root[data-look="bumble"] .hero { background: #fff; }
+:root[data-look="bumble"] .hero-meta .label { opacity: 1; box-shadow: inset 0 0 0 1px var(--line-2); background: #fff; font-weight: 700; }
+:root[data-look="bumble"] .hero-meta .label:first-child { background: var(--honey); box-shadow: none; }
+:root[data-look="bumble"] .status-dot { background: #2a9d4b; box-shadow: none; }
+:root[data-look="bumble"] .hero-title { font-weight: 800; font-stretch: 100%; line-height: .95; letter-spacing: -.045em; max-width: 14ch; }
+:root[data-look="bumble"] .hero-title .line { overflow: visible; }
+:root[data-look="bumble"] .hero-title .serif { display: inline-block; font-size: .62em; line-height: 1.08; letter-spacing: -.04em; color: var(--ink); background: var(--honey); padding: .02em .16em .1em; border-radius: .22em; margin-top: .12em; }
+:root[data-look="bumble"] .hero-foot nav { background: #fff; border-radius: var(--r-card); box-shadow: var(--shadow); padding: 12px; }
+:root[data-look="bumble"] .index-list li { border-bottom: 0; }
+:root[data-look="bumble"] .index-list a { padding: 16px 20px; border-radius: 14px; align-items: center; transition: background-color .2s; }
+:root[data-look="bumble"] .index-list a:hover { background: var(--pollen); }
+:root[data-look="bumble"] .index-list li:first-child a { background: var(--honey); }
+:root[data-look="bumble"] .index-list .name { font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; }
+:root[data-look="bumble"] .index-list li:first-child .name, :root[data-look="bumble"] .index-list a:hover .name { color: var(--ink); text-decoration: none; }
+:root[data-look="bumble"] .index-list .num, :root[data-look="bumble"] .index-list .count { color: var(--ink); font-weight: 700; opacity: .75; }
+
+/* Headings */
+:root[data-look="bumble"] .section-head h2, :root[data-look="bumble"] .page-title, :root[data-look="bumble"] .contact-band h2 { font-weight: 800; letter-spacing: -.045em; line-height: .95; }
+:root[data-look="bumble"] .section-head h2 { font-size: clamp(2.4rem, 1rem + 4.6vw, 4.6rem); }
+:root[data-look="bumble"] .section-head p { color: var(--ink-2); font-size: 1.1rem; }
+:root[data-look="bumble"] .serif { color: inherit; }
+:root[data-look="bumble"] .page-hero { background: #fff; border-bottom: 1px solid var(--line); }
+:root[data-look="bumble"] .page-title { font-size: clamp(2.6rem, 1rem + 5.4vw, 5.4rem); max-width: 16ch; }
+:root[data-look="bumble"] .page-title .serif { display: inline-block; background: var(--honey); color: var(--ink); padding: 0 .14em .06em; border-radius: .2em; font-size: .9em; }
+:root[data-look="bumble"] .page-hero .lede { color: var(--ink-2); }
+
+/* Project frames: white windows, soft shadow, no glow stage */
+:root[data-look="bumble"] .frame { background: #fff; border: 0; border-radius: var(--r-card); box-shadow: var(--shadow); }
+:root[data-look="bumble"] .frame-bar { background: #fff; border-bottom: 1px solid var(--line); color: var(--ink); font-weight: 600; height: 2.3rem; }
+:root[data-look="bumble"] .frame-bar::before {
+  background:
+    radial-gradient(circle at .25rem 50%, var(--line-2) .22rem, transparent .24rem),
+    radial-gradient(circle at 1.125rem 50%, var(--line-2) .22rem, transparent .24rem),
+    radial-gradient(circle at 2rem 50%, var(--line-2) .22rem, transparent .24rem);
+}
+:root[data-look="bumble"] .feature-media { padding: 0; background: none; box-shadow: none; border-radius: 0; overflow: visible; }
+:root[data-look="bumble"] .feature-media::before { display: none; }
+:root[data-look="bumble"] .feature-media .frame { border-radius: var(--r-card); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+:root[data-look="bumble"] .feature-media:hover { transform: none; box-shadow: none; }
+:root[data-look="bumble"] .feature-media:hover .frame { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+:root[data-look="bumble"] .feature-body p { color: var(--ink-2); }
+:root[data-look="bumble"] .tags li { box-shadow: none; background: var(--honey); color: var(--ink); font-weight: 700; font-size: .78rem; }
+:root[data-look="bumble"] .media-fallback { background: var(--pollen); color: var(--ink); }
+:root[data-look="bumble"] .media-fallback .tile-mark { color: var(--ink); font-weight: 800; }
+
+/* Cards */
+:root[data-look="bumble"] .practice, :root[data-look="bumble"] .practice:nth-child(2n+1), :root[data-look="bumble"] .practice:first-child {
+  background: var(--pollen); border: 0; border-radius: var(--r-card); box-shadow: var(--shadow); padding: 28px; transition: transform .2s, box-shadow .2s;
+}
+:root[data-look="bumble"] .practice:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+:root[data-look="bumble"] .practice h3 { font-size: 1.6rem; letter-spacing: -.04em; }
+:root[data-look="bumble"] .practice:hover h3 { color: inherit; }
+:root[data-look="bumble"] .practice p { color: var(--ink); }
+:root[data-look="bumble"] .facts { background: var(--honey); border-radius: var(--r-card); padding: 36px 40px; gap: 28px 48px; box-shadow: var(--shadow); }
+:root[data-look="bumble"] .facts li { background: none; box-shadow: none; border: 0; padding: 0; border-radius: 0; }
+:root[data-look="bumble"] .facts strong { font-weight: 800; letter-spacing: -.045em; }
+:root[data-look="bumble"] .facts span { color: var(--ink); font-weight: 700; }
+:root[data-look="bumble"] .work-card, :root[data-look="bumble"] .print, :root[data-look="bumble"] .service-list li, :root[data-look="bumble"] .thumb-open, :root[data-look="bumble"] .ia-node {
+  border: 0; border-radius: var(--r-card); background: #fff; box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s;
+}
+:root[data-look="bumble"] .work-card:hover, :root[data-look="bumble"] .print:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+:root[data-look="bumble"] .work-card .frame { box-shadow: none; background: var(--paper); border-radius: 14px; }
+:root[data-look="bumble"] .print-open { border: 0; border-radius: 14px; }
+:root[data-look="bumble"] .case-gallery .print-open { border-radius: 14px; }
+:root[data-look="bumble"] .service-list li { background: var(--pollen); }
+:root[data-look="bumble"] .service-list p, :root[data-look="bumble"] .work-card p, :root[data-look="bumble"] .timeline p, :root[data-look="bumble"] .episode p, :root[data-look="bumble"] .faq-item p, :root[data-look="bumble"] .process p { color: var(--ink-2); }
+:root[data-look="bumble"] .service-list p { color: var(--ink); }
+:root[data-look="bumble"] .chip { border: 0; box-shadow: inset 0 0 0 2px var(--ink); font-weight: 700; }
+:root[data-look="bumble"] .chip:hover { background: var(--pollen); }
+:root[data-look="bumble"] .chip[aria-pressed="true"] { background: var(--ink); color: #fff; }
+:root[data-look="bumble"] .search input { border: 0; box-shadow: inset 0 0 0 2px var(--ink); background: #fff; }
+:root[data-look="bumble"] .toolbar { background: var(--paper); -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom: 1px solid var(--line); }
+:root[data-look="bumble"] .timeline, :root[data-look="bumble"] .episode-list, :root[data-look="bumble"] .process, :root[data-look="bumble"] .faq, :root[data-look="bumble"] .ia, :root[data-look="bumble"] .case-facts div { border-top: 1px solid var(--line-2); }
+:root[data-look="bumble"] .timeline li, :root[data-look="bumble"] .episode, :root[data-look="bumble"] .process li, :root[data-look="bumble"] .faq-item { border-bottom: 1px solid var(--line); }
+:root[data-look="bumble"] .process .step-no { color: var(--ink); font-weight: 800; }
+:root[data-look="bumble"] .ia-role { background: var(--ink); }
+:root[data-look="bumble"] .ia-shared { background: var(--pollen); }
+
+/* Photography: same square-cornered contact sheet as Classic */
+:root[data-look="bumble"] .sheet .frame-no { color: #c9ced8; opacity: .8; }
+:root[data-look="bumble"] .sheet .print-open, :root[data-look="bumble"] .sheet .media { border-radius: 0; }
+
+/* Video & podcast */
+:root[data-look="bumble"] .video-player, :root[data-look="bumble"] .video-poster, :root[data-look="bumble"] .video-card .video-player { border-radius: 18px; }
+:root[data-look="bumble"] .video-player { box-shadow: var(--shadow); }
+:root[data-look="bumble"] .play { background: var(--honey); color: var(--ink); font-weight: 800; }
+:root[data-look="bumble"] .video-poster:hover .play { background: #fff; color: var(--ink); }
+:root[data-look="bumble"] .podcast-tile .media-fallback { background: var(--honey); color: var(--ink); }
+:root[data-look="bumble"] .podcast-tile .media-fallback .tile-mark { color: var(--ink); }
+:root[data-look="bumble"] .cover .media, :root[data-look="bumble"] .portrait .media { border: 0; border-radius: var(--r-card); box-shadow: var(--shadow); }
+
+/* Contact: honey card */
+:root[data-look="bumble"] .contact-band { background: transparent; color: var(--ink); padding: 0 var(--gutter-r) var(--s-8) var(--gutter); }
+:root[data-look="bumble"] .contact-band .wrap { max-width: var(--max); background: var(--honey); border-radius: 28px; box-shadow: none; padding: clamp(40px, 6vw, 80px) clamp(24px, 5vw, 56px); }
+:root[data-look="bumble"] .contact-band h2 { font-size: clamp(2.6rem, 1rem + 6vw, 6rem); max-width: 14ch; }
+:root[data-look="bumble"] .contact-band h2 .serif { display: inline-block; background: var(--ink); color: var(--honey); padding: .02em .18em .1em; border-radius: .2em; }
+:root[data-look="bumble"] .contact-band .label, :root[data-look="bumble"] .contact-band p, :root[data-look="bumble"] .contact-links .handle { color: var(--ink); }
+:root[data-look="bumble"] .contact-links { border-top: 2px solid var(--ink); }
+:root[data-look="bumble"] .contact-links a, :root[data-look="bumble"] .contact-links .contact-row { border-bottom: 2px solid var(--ink); font-weight: 800; }
+:root[data-look="bumble"] .contact-links a:hover { color: var(--ink); padding-inline: 10px; }
+:root[data-look="bumble"] .contact-band .btn { background: var(--ink); color: #fff; }
+:root[data-look="bumble"] .contact-band .btn:hover { background: #fff; color: var(--ink); box-shadow: none; }
+:root[data-look="bumble"] .contact-band .btn--ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 3px var(--ink); }
+:root[data-look="bumble"] .contact-band .btn--ghost:hover { background: var(--ink); color: #fff; }
+
+:root[data-look="bumble"] .site-footer { border-top: 1px solid var(--line); background: var(--paper); }
+:root[data-look="bumble"] .footer-links a { color: var(--ink); }
+:root[data-look="bumble"] .footer-links a:hover { text-decoration: underline; text-decoration-color: var(--honey); text-decoration-thickness: 3px; color: var(--ink); }
+:root[data-look="bumble"] .site-footer small { color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-look="bumble"] .practice:hover, :root[data-look="bumble"] .work-card:hover, :root[data-look="bumble"] .print:hover,
+  :root[data-look="bumble"] .feature-media:hover .frame, :root[data-look="bumble"] .btn:hover { transform: none; }
+}
+
+
+/* ==========================================================================
+   Yellow site — closer to the "Landing page" mockup.
+   White page, heavy uppercase Inter headlines, honey pill buttons,
+   centered honey contact card. Same content and layout as the other looks.
+   ========================================================================== */
+:root[data-look="bumble"] { --paper: #ffffff; --t-hero: clamp(2.5rem, 1rem + 6vw, 6.2rem); }
+:root[data-look="bumble"] body { background: #fff; }
+
+/* Big uppercase headlines */
+:root[data-look="bumble"] .hero-title,
+:root[data-look="bumble"] .page-title,
+:root[data-look="bumble"] .section-head h2,
+:root[data-look="bumble"] .contact-band h2 { font-weight: 900; text-transform: uppercase; letter-spacing: -.04em; line-height: .92; }
+:root[data-look="bumble"] .hero-title { max-width: 13ch; }
+:root[data-look="bumble"] .hero-title .serif { text-transform: none; font-weight: 800; letter-spacing: -.03em; font-size: .5em; }
+:root[data-look="bumble"] .page-title .serif { text-transform: none; font-weight: 800; letter-spacing: -.03em; font-size: .6em; vertical-align: .12em; }
+:root[data-look="bumble"] .contact-band h2 .serif { text-transform: none; }
+:root[data-look="bumble"] h3 { letter-spacing: -.025em; }
+
+/* Small honey pill above the hero headline */
+:root[data-look="bumble"] .hero-meta .label { border-radius: 999px; font-size: .8rem; padding: .45rem .9rem; }
+
+/* Buttons: honey pill primary, outlined pill secondary */
+:root[data-look="bumble"] .btn { border-radius: 999px; background: var(--honey); color: var(--ink); font-weight: 800; }
+:root[data-look="bumble"] .btn:hover { background: var(--ink); color: #fff; box-shadow: none; transform: none; }
+:root[data-look="bumble"] .btn--ghost { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+:root[data-look="bumble"] .btn--ghost:hover { background: var(--ink); color: #fff; }
+:root[data-look="bumble"] .contact-band .btn { background: var(--ink); color: var(--honey); }
+:root[data-look="bumble"] .contact-band .btn:hover { background: #fff; color: var(--ink); }
+:root[data-look="bumble"] .contact-band .btn--ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+
+/* Header: honey pill on the current page and on the switch */
+:root[data-look="bumble"] .nav-list a { border-radius: 999px; }
+
+/* Stats band: big numbers on honey */
+:root[data-look="bumble"] .facts strong { font-weight: 900; }
+
+/* "Beyond the browser" cards: pollen with a charcoal number badge */
+:root[data-look="bumble"] .practice .label {
+  display: inline-grid; place-items: center; width: max-content; min-width: 2.6rem; height: 2.6rem; padding: 0 .8rem;
+  border-radius: 999px; background: var(--ink); color: var(--honey); opacity: 1; font-size: .78rem;
+}
+
+/* Contact: centered honey card like the mockup */
+:root[data-look="bumble"] .contact-band .wrap { text-align: center; }
+:root[data-look="bumble"] .contact-band h2 { margin-inline: auto; }
+:root[data-look="bumble"] .contact-band p { margin-inline: auto; max-width: 52ch; }
+:root[data-look="bumble"] .contact-band .actions { justify-content: center; }
+:root[data-look="bumble"] .contact-links { text-align: left; }

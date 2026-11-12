@@ -129,7 +129,7 @@ function initYear() {
   document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 }
 
-/* ---------- Classic / Bold look switch ---------- */
+/* ---------- Yellow / Classic / Creative look switch (Yellow = data-look "bumble") ---------- */
 function initLook() {
   const root = document.documentElement;
   const tools = document.querySelector(".header-tools");
@@ -138,15 +138,15 @@ function initLook() {
   wrap.className = "look-switch";
   wrap.setAttribute("role", "group");
   wrap.setAttribute("aria-label", "Site style");
-  wrap.innerHTML = '<button type="button" data-look="classic">Classic</button><button type="button" data-look="bold">Creative</button>';
+  wrap.innerHTML = '<button type="button" data-look="bumble">Yellow</button><button type="button" data-look="classic">Classic</button><button type="button" data-look="bold">Creative</button>';
   tools.prepend(wrap);
   const sync = () => wrap.querySelectorAll("button").forEach((b) =>
-    b.setAttribute("aria-pressed", String(b.dataset.look === (root.dataset.look || "classic"))));
+    b.setAttribute("aria-pressed", String(b.dataset.look === (root.dataset.look || "bumble"))));
   wrap.addEventListener("click", (e) => {
     const b = e.target.closest("button");
     if (!b) return;
     root.dataset.look = b.dataset.look;
-    try { localStorage.setItem("look", b.dataset.look); } catch (err) { /* ignore */ }
+    try { localStorage.setItem("look-v2", b.dataset.look); } catch (err) { /* ignore */ }
     sync();
   });
   sync();
