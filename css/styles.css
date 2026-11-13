@@ -31,6 +31,7 @@
 @font-face { font-family: "Syne"; src: url("../fonts/syne-var.woff2") format("woff2"); font-weight: 400 800; font-display: swap; }
 @font-face { font-family: "Hanken Grotesk"; src: url("../fonts/hanken-grotesk-var.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 
+
 /* ---------- Tokens ---------- */
 :root {
   /* Color — cool proof-paper, ink, one ultramarine accent */
@@ -1607,3 +1608,25 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.03em; font-stretch: 100%; 
 .podcast-tile .media-fallback { background: var(--accent); color: var(--accent-ink); padding: var(--s-5); }
 .podcast-tile .media-fallback .tile-mark { color: var(--accent-ink); font-size: clamp(1.9rem, 1.2rem + 2vw, 2.5rem); }
 .podcast-tile .tile-icon { width: 2.25rem; height: 2.25rem; }
+
+/* Three-option look switch: fit phone headers */
+@media (max-width: 26rem) {
+  .look-switch { gap: 0; }
+  .look-switch button { padding: .42rem .45rem; font-size: .7rem; }
+  .header-tools { gap: 6px; }
+}
+
+
+/* ==========================================================================
+   Creative look — fonts: Archivo Expanded ExtraBold (headings) + Hanken Grotesk (body).
+   Replaces Syne for headings. Colors, borders and shadows unchanged.
+   ========================================================================== */
+:root[data-look="bold"] {
+  --f-display: "Archivo", "Geist", system-ui, sans-serif;
+  --f-serif: "Archivo", "Geist", system-ui, sans-serif;
+}
+:root[data-look="bold"] h1, :root[data-look="bold"] h2, :root[data-look="bold"] h3, :root[data-look="bold"] h4,
+:root[data-look="bold"] .brand, :root[data-look="bold"] .btn, :root[data-look="bold"] .serif,
+:root[data-look="bold"] .index-list .name, :root[data-look="bold"] .contact-links a { font-family: var(--f-display); font-stretch: 125%; font-weight: 800; }
+:root[data-look="bold"] .hero-title, :root[data-look="bold"] .hero-title .serif, :root[data-look="bold"] .section-head h2, :root[data-look="bold"] .page-title, :root[data-look="bold"] .contact-band h2, :root[data-look="bold"] .facts strong { letter-spacing: -.035em; }
+@media (max-width: 26rem) { :root[data-look="bold"] .brand { font-stretch: 100%; letter-spacing: .04em; font-size: .95rem; } }
